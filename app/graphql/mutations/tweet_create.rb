@@ -1,11 +1,11 @@
 module Mutations
   class TweetCreate < Mutations::BaseMutation
-    argument :message, String
+    argument :attributes, Types::TweetCreateAttributes
 
     field :tweet, Types::TweetType
 
-    def resolve(message:)
-      tweet = Types::TweetType.create(message: message)
+    def resolve(attributes:)
+      tweet = Tweet.create(attributes)
 
       { tweet: tweet.id }
     end

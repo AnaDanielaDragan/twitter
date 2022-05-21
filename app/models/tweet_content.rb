@@ -1,0 +1,2 @@
+class TweetContent < ApplicationRecord
+end
